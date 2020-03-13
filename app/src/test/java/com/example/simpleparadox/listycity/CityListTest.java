@@ -18,14 +18,14 @@ class CityListTest {
     }
 
     @Test
-    void testAddFail(){
+    void testAddFailToRight(){
         CityList cityList = mockCityList();
 
         assertEquals(1, cityList.countCities());
-        cityList.add(new City("Regina", "Saskatchewan"));
+        cityList.add(new City("Beijing", "Beijing"));
 
-        assertEquals(3, cityList.countCities());
-        assertTrue(cityList.hasCity(new City("Not Right", "fail")));
+        assertEquals(2, cityList.countCities());
+        assertTrue(cityList.hasCity(new City("Beijing", "Beijing")));
     }
 
 
