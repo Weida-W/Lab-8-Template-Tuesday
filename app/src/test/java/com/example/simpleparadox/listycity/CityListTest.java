@@ -18,6 +18,19 @@ class CityListTest {
     }
 
     @Test
+    void testAddFailToRight(){
+        CityList cityList = mockCityList();
+
+        assertEquals(1, cityList.countCities());
+        cityList.add(new City("Beijing", "Beijing"));
+
+        assertEquals(2, cityList.countCities());
+        assertTrue(cityList.hasCity(new City("Beijing", "Beijing")));
+    }
+
+
+
+    @Test
     void testAdd() {
         CityList cityList = mockCityList();
 
@@ -93,4 +106,6 @@ class CityListTest {
 
         assertEquals(1, cityList.countCities());
     }
+
+
 }
